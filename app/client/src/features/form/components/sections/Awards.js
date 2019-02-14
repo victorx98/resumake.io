@@ -20,10 +20,10 @@ type Props = {
 
 function Awards({ awards, addAward, removeAward }: Props) {
   return (
-    <Section heading="Honors & Awards">
+    <Section heading="你的荣誉以及获奖经历">
       <LabeledInput
         name="headings.awards"
-        label="Section Heading"
+        label="本栏标题"
         placeholder="Awards"
       />
       <Divider />

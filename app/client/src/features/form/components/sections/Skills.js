@@ -33,10 +33,10 @@ function Skills({
   removeSkillKeyword
 }: Props) {
   return (
-    <Section heading="Your Skills">
+    <Section heading="你的职业技能">
       <LabeledInput
         name="headings.skills"
-        label="Section Heading"
+        label="本栏标题"
         placeholder="Skills"
       />
       <Divider />

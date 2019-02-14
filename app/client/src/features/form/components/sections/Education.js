@@ -20,10 +20,10 @@ type Props = {
 
 function Education({ education, addSchool, removeSchool }: Props) {
   return (
-    <Section heading="Your Educational Background">
+    <Section heading="你的教育经历">
       <LabeledInput
         name="headings.education"
-        label="Section Heading"
+        label="本栏标题"
         placeholder="Education"
       />
       <Divider />

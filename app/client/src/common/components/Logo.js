@@ -9,7 +9,7 @@ import { colors } from '../theme'
 
 const Text = styled.h1`
   font-family: 'Nexa';
-  font-size: ${props => (props.big ? 4 : 2.5)}em;
+  font-size: ${props => (props.big ? 3 : 2.5)}em;
   margin: 0;
 `
 
@@ -32,7 +32,7 @@ function Logo({ big }: Props) {
   return (
     <Text big={big}>
       <StyledLink to="/">
-        resu<Accent>make</Accent>
+        蔓藤<Accent>简历通</Accent>
       </StyledLink>
     </Text>
   )

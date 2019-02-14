@@ -11,7 +11,7 @@ import {
 } from 'react-sortable-hoc'
 import styled from 'styled-components'
 import { colors } from '../../../common/theme'
-import { titleCase } from '../../../common/utils'
+import { titleCase, titleConvert } from '../../../common/utils'
 
 const List = styled.div`
   margin: 0;
@@ -81,7 +81,7 @@ const SortableItem = SortableElement(({ value }) => {
   return (
     <Item>
       <DragHandle disabled={value === 'templates' || value === 'profile'} />
-      <NavItem to={`/generator/${value}`}>{titleCase(value)}</NavItem>
+      <NavItem to={`/generator/${value}`}>{titleConvert(value)}</NavItem>
     </Item>
   )
 })

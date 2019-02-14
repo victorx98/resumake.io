@@ -84,7 +84,7 @@ class SideNav extends Component<Props> {
             onSortEnd={this.onSortEnd}
           />
           <MakeButton type="submit" form="resume-form">
-            Make
+            生成简历
           </MakeButton>
         </Nav>
       </Aside>

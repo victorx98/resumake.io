@@ -8,26 +8,26 @@ import LabeledInput from '../fragments/LabeledInput'
 
 function Profile() {
   return (
-    <Section heading="Your Personal Info">
+    <Section heading="你的个人信息">
       <LabeledInput
         name="basics.name"
         label="Full Name"
-        placeholder="John Smith"
+        placeholder="Gang Wang"
       />
       <LabeledInput
         name="basics.email"
         label="Email"
-        placeholder="johnsmith@gmail.com"
+        placeholder="gang.wang@gmail.com"
       />
       <LabeledInput
         name="basics.phone"
         label="Phone Number"
-        placeholder="(555) 123-4567"
+        placeholder="(666) 123-4567"
       />
       <LabeledInput
         name="basics.location.address"
         label="Location"
-        placeholder="New York, NY"
+        placeholder="Irvine, CA"
       />
       <LabeledInput
         name="basics.website"

@@ -214,7 +214,7 @@ function About() {
       <Header>
         <Logo big />
         <p>
-          Resumake is a tool for automatically generating beautiful resumes.
+          使用蔓藤简历通，轻松创建完美简历！
         </p>
         <p>
           The webapp was made by{' '}

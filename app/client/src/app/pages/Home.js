@@ -284,15 +284,15 @@ class Home extends Component<Props> {
           <LeftSection>
             <Logo big />
             <PrimaryButton to="/generator" onClick={this.clearState}>
-              Make New Resume
+              创建新简历
             </PrimaryButton>
             {hasPrevSession && (
               <Button to="/generator" onClick={clearPreview}>
-                Continue Session
+                继续当前简历
               </Button>
             )}
             <ImportRow>
-              <Label htmlFor="import-json">Import JSON</Label>
+              <Label htmlFor="import-json">导入简历JSON文件</Label>
               <Input
                 id="import-json"
                 type="file"
@@ -302,7 +302,7 @@ class Home extends Component<Props> {
                 onClick={() => {
                   if (!toast.isActive(this.toastId)) {
                     this.toastId = toast.info(
-                      "When you're done working on your resume, you can save it as a JSON which can be imported here to continue progress.",
+                      "你可以把编辑好的简历以JSON格式下载下来。下次从这里导入JSON文件可以在原来的简历上继续编辑和修改。",
                       { position: toast.POSITION.TOP_LEFT }
                     )
                   }
@@ -320,16 +320,6 @@ class Home extends Component<Props> {
             </ResumePreview>
           </RightSection>
         </Main>
-        <Footer>
-          <Copyright>© 2018 Saad Quadri</Copyright>
-          <Links>
-            <Link to="/about">About</Link>
-            <a href="https://github.com/saadq/resumake">Source</a>
-            <a href="https://github.com/saadq/resumake/issues">Issues</a>
-            <a href="mailto:saad@saadq.com">Contact</a>
-            <a href="https://www.paypal.me/saadquadri">Donate</a>
-          </Links>
-        </Footer>
       </Wrapper>
     )
   }

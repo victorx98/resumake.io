@@ -33,10 +33,10 @@ function Projects({
   removeProjectKeyword
 }: Props) {
   return (
-    <Section heading="Your Projects">
+    <Section heading="你曾经做过的项目">
       <LabeledInput
         name="headings.projects"
-        label="Section Heading"
+        label="本栏标题"
         placeholder="Projects"
       />
       <Divider />
