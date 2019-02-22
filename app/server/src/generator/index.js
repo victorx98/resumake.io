@@ -10,7 +10,7 @@ import getTemplateData from './templates'
 import type { Transform } from 'stream'
 import type { SanitizedValues } from '../types'
 
-import update_resume from './'
+import {update_resume} from './save-db.js'
 
 /**
  * Generates a LaTeX document from the request body,

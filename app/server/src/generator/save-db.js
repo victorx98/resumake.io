@@ -1,9 +1,8 @@
 
-function search_resume(search_term) {
-}
-
 function search_email(email) {
-    var sql = "SELECT email FROM resumes WHERE email=${email}";
+    var sql = "SELECT email FROM resumes WHERE email='" + email + "'";
+    console.log("Update SQL:")
+    console.log(sql)
     db.query(sql, function (err, result) {
         if (err) {
             throw err;
@@ -16,21 +15,29 @@ function search_email(email) {
  
 function update_resume(resumeJSON) {
 
-    resumeObj = JSON.parse(resumeJSON)
-    email = resumeObj.basics.email
-    name = resumeObj.basics.name
-    studyArea = resumeObj.education.area
+    console.log("INPUT JSON:")
+    console.log(resumeJSON)
+
+    var email = resumeJSON.basics.email
+    var name = resumeJSON.basics.name
+    var studyArea = resumeJSON.education[0].area
+    var rJSON = JSON.stringify(resumeJSON)
+    console.log("OUTPUT JSON:")
+    console.log(rJSON)
 
 
-    result = search_email(email)
+    var result = search_email(email)
     var sql="";
     if(result) {
         // found existing email record, update the resume
         sql = "UPDATE `resumes` SET `name` = '" + name + "', `area` = '" + studyArea + "', `resume` = '" + resumeJSON + "' WHERE `email` = '" + email + "'";
     } else {
         // new email, insert record
-        sql = "INSERT INTO `resumes` (email, name, area, resume) VALUES ('" + email + "', '" + name + "', '" + studyArea + "', '" + resumeJSON + "')";
+        sql = "INSERT INTO `resumes` (email, name, major, resume) VALUES ('" + email + "', '" + name + "', '" + studyArea + "', '" + rJSON + "')";
     }
+
+    console.log("Update SQL:")
+    console.log(sql)
 
     
     db.query(sql, function (err, result) {
@@ -39,4 +46,4 @@ function update_resume(resumeJSON) {
     });
 }
 
-export { search_resume, update_resume }
+export { search_email, update_resume }
