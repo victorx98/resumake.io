@@ -39,7 +39,7 @@ function update_resume(resumeJSON) {
         } else {
             // body...
             var sql="";
-            if(result) {
+            if(result.length > 0) {
                 // found existing email record, update the resume
                 sql = "UPDATE `resumes` SET `name` = '" + name + "', `major` = '" + studyArea + "', `resume` = '" + eJSON + "' WHERE `email` = '" + email + "'";
             } else {
