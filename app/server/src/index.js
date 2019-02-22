@@ -10,6 +10,24 @@ import { errorHandler } from './middleware'
 
 const app = new Koa()
 
+// set up mysql connection
+const mysql = require('mysql');
+const db = mysql.createConnection ({
+    host: 'localhost',
+    user: 'resumake',
+    password: 'resumake1357',
+    database: 'resumes'
+});
+
+// connect to database
+db.connect((err) => {
+    if (err) {
+        throw err;
+    }
+    console.log('Connected to database');
+});
+global.db = db;
+
 if (app.env === 'development') {
   app.proxy = true
 }

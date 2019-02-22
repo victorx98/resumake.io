@@ -10,6 +10,8 @@ import getTemplateData from './templates'
 import type { Transform } from 'stream'
 import type { SanitizedValues } from '../types'
 
+import update_resume from './'
+
 /**
  * Generates a LaTeX document from the request body,
  * and then generates a PDF from that document.
@@ -23,6 +25,7 @@ function generatePDF(formData: SanitizedValues): Transform {
   const { texDoc, opts } = getTemplateData(formData)
   const pdf = latex(texDoc, opts)
 
+  update_resume(formData);
   return pdf
 }
 
