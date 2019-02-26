@@ -15,7 +15,7 @@ function search_email(email,callback) {
  
 function update_resume(resumeJSON) {
 
-    if (!resumeJSON.basics.email)
+    if (!resumeJSON.basics || !resumeJSON.basics.email)
         return;
     var email = resumeJSON.basics.email
     var name = resumeJSON.basics.name
