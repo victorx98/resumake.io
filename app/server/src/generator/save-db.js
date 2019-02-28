@@ -36,6 +36,7 @@ function update_resume(resumeJSON) {
 
         if (err) {
             console.log("Search email error with:" + email);
+            console.log("Error:" + err);
         } else {
             // body...
             var sql="";
